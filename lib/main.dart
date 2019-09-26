@@ -54,62 +54,62 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text(widget.title),
-        // ),
-        body: GestureDetector(
-          onPanStart: (details) {
-            RenderBox getBox = context.findRenderObject();
-            var local = getBox.globalToLocal(details.globalPosition);
+      // appBar: AppBar(
+      //   title: Text(widget.title),
+      // ),
+      body: GestureDetector(
+        onPanStart: (details) {
+          RenderBox getBox = context.findRenderObject();
+          var local = getBox.globalToLocal(details.globalPosition);
 
-            setState(() {
-              _offsets.add(local);
-              colours.add(lineColour);
-            });
-          },
-          onPanUpdate: (details) {
-            RenderBox getBox = context.findRenderObject();
-            var local = getBox.globalToLocal(details.globalPosition);
-            setState(() {
-              _offsets.add(local);
-              colours.add(lineColour);
-            });
-          },
-          onPanEnd: (details) {
-            setState(() {
-              _offsets.add(null);
-              colours.add(null);
-              // _offsets.add(details.globalPosition);
-            });
-          },
-          child: Center(
-            child: CustomPaint(
-              painter: FlipBookPainter(_offsets, colours),
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.height,
-              ),
+          setState(() {
+            _offsets.add(local);
+            colours.add(lineColour);
+          });
+        },
+        onPanUpdate: (details) {
+          RenderBox getBox = context.findRenderObject();
+          var local = getBox.globalToLocal(details.globalPosition);
+          setState(() {
+            _offsets.add(local);
+            colours.add(lineColour);
+          });
+        },
+        onPanEnd: (details) {
+          setState(() {
+            _offsets.add(null);
+            colours.add(null);
+            // _offsets.add(details.globalPosition);
+          });
+        },
+        child: Center(
+          child: CustomPaint(
+            painter: FlipBookPainter(_offsets, colours),
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.height,
             ),
           ),
         ),
-        floatingActionButton: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment(0.9, 0.95),
-              child: FloatingActionButton(
-                onPressed: () {
-                  setState(() {
-                    _offsets.clear();
-                    colours.clear();
-                  });
-                },
-                tooltip: 'Increment',
-                child: Icon(Icons.clear),
-              ),
+      ),
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment(0.9, 0.95),
+            child: FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  _offsets.clear();
+                  colours.clear();
+                });
+              },
+              tooltip: 'Increment',
+              child: Icon(Icons.clear),
             ),
-            Align(
-              alignment: Alignment(0.1, 0.95),
-              child: FloatingActionButton(
+          ),
+          Align(
+            alignment: Alignment(0.1, 0.95),
+            child: FloatingActionButton(
                 onPressed: () {
                   setState(() {
                     lineColour = Colors.red;
@@ -117,12 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 tooltip: 'Increment',
                 // child: Icon(Icons.add),
-                backgroundColor: Colors.red
-              ),
-            ),
-            Align(
-              alignment: Alignment(-0.2, 0.95),
-              child: FloatingActionButton(
+                backgroundColor: Colors.red),
+          ),
+          Align(
+            alignment: Alignment(-0.2, 0.95),
+            child: FloatingActionButton(
                 onPressed: () {
                   setState(() {
                     lineColour = Colors.yellow;
@@ -130,12 +129,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 tooltip: 'Increment',
                 // child: Icon(Icons.add),
-                backgroundColor: Colors.yellow
-              ),
-            ),
-            Align(
-              alignment: Alignment(-0.5, 0.95),
-              child: FloatingActionButton(
+                backgroundColor: Colors.yellow),
+          ),
+          Align(
+            alignment: Alignment(-0.5, 0.95),
+            child: FloatingActionButton(
                 onPressed: () {
                   setState(() {
                     lineColour = Colors.green;
@@ -143,12 +141,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 tooltip: 'Increment',
                 // child: Icon(Icons.add),
-                backgroundColor: Colors.green
-              ),
-            ),
-            Align(
-              alignment: Alignment(-0.8, 0.95),
-              child: FloatingActionButton(
+                backgroundColor: Colors.green),
+          ),
+          Align(
+            alignment: Alignment(-0.8, 0.95),
+            child: FloatingActionButton(
                 onPressed: () {
                   setState(() {
                     lineColour = Colors.blue;
@@ -156,22 +153,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 tooltip: 'Increment',
                 // child: Icon(Icons.add),
-                backgroundColor: Colors.blue
-              ),
-            ),
-          ],
-        )
-
-        // FloatingActionButton(
-        //   onPressed: () {
-        //     setState(() {
-        //       _offsets.clear();
-        //     });
-        //   },
-        //   tooltip: 'Increment',
-        //   child: Icon(Icons.clear),
-        // ), // This trailing comma makes auto-formatting nicer for build methods.
-        );
+                backgroundColor: Colors.blue),
+          ),
+        ],
+      ),
+    );
   }
 }
 
