@@ -1,16 +1,15 @@
 # flutter_workshop_capco
 
-A new Flutter project.
+This app allows the user to draw on the screen using different colours.
 
-## Getting Started
+This project was done during Capco's first Technical workshops. We attempted to
+learn flutter by recreating the app created during [this] episode of the
+boring show. Below are some screenshots of what I came up with.
 
-This project is a starting point for a Flutter application.
+There are 5 buttons. 4 which change the drawing colour, and one which will clear
+the screen.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Before](/assets/before.png)
+![After](/assets/after.png)
